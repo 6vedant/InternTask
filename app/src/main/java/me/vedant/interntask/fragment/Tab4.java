@@ -6,7 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import me.vedant.interndemos.R;
+import me.vedant.interntask.R;
+
 
 /**
  * Created by vedant on 11/21/2018.
