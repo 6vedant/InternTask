@@ -11,7 +11,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import me.vedant.interntask.fragment.Tab1;
+import me.vedant.interntask.fragment.Tab2;
+import me.vedant.interntask.fragment.Tab3;
+import me.vedant.interntask.fragment.Tab4;
 import me.vedant.interntask.prototype.CrickPrototype;
+import me.vedant.interntask.prototype.Tab1Prototype;
 
 public class MainActivity extends AppCompatActivity {
 
