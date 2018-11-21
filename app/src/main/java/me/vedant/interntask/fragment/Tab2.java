@@ -11,10 +11,11 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
-import me.vedant.interndemos.R;
-import me.vedant.interndemos.adapter.Tab2Adapter;
-import me.vedant.interndemos.prototype.Tab1Prototype;
-import me.vedant.interndemos.prototype.Tab2Prototype;
+import me.vedant.interntask.R;
+import me.vedant.interntask.adapter.Tab2Adapter;
+import me.vedant.interntask.prototype.Tab1Prototype;
+import me.vedant.interntask.prototype.Tab2Prototype;
+
 
 /**
  * Created by vedant on 11/21/2018.

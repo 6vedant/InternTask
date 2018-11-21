@@ -12,9 +12,10 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
-import me.vedant.interndemos.R;
-import me.vedant.interndemos.adapter.Tab1Adapter;
-import me.vedant.interndemos.prototype.Tab1Prototype;
+import me.vedant.interntask.R;
+import me.vedant.interntask.adapter.Tab1Adapter;
+import me.vedant.interntask.prototype.Tab1Prototype;
+
 
 /**
  * Created by vedant on 11/21/2018.
@@ -45,11 +46,11 @@ public class Tab1 extends Fragment {
 
         View view = inflater.inflate(R.layout.tab1, container, false);
 
-     //   ArrayList<CrickPrototype> crickPrototypes = (ArrayList<CrickPrototype>) getArguments().getSerializable("valuesArray");
+        //   ArrayList<CrickPrototype> crickPrototypes = (ArrayList<CrickPrototype>) getArguments().getSerializable("valuesArray");
 
         ArrayList<Tab1Prototype> tab1Prototypes = (ArrayList<Tab1Prototype>)getArguments().getSerializable("tab1prototypes");
 
-     //   Toast.makeText(getContext(), "The size of the crickProtypes " + crickPrototypes.size(), Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(getContext(), "The size of the crickProtypes " + crickPrototypes.size(), Toast.LENGTH_SHORT).show();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         progressBar = (ProgressBar) view.findViewById(R.id.progressbar);

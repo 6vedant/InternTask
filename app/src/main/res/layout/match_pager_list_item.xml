@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0c4566"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_pager_series_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="Home"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/team1_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/im_pager_team1"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/indian_team_logo" />
+
+            <TextView
+                android:id="@+id/tv_pager_team1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="INDIA"
+                android:textColor="#cbdce2"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:text="1st Innings"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/tv_pager_team1score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="277/3"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/team2_layout"
+            android:layout_toRightOf="@+id/team1_layout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center|left"
+                android:padding="4dp"
+                android:text="VS"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/team2_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/im_pager_team2"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/indian_team_logo"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_pager_team2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="PAKISTAN"
+                android:textColor="#cbdce2"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:text="2nd Innings"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/tv_pager_team2score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="277/3"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_pager_match_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="India won by 4 wickets."
+        android:textColor="#03f77d"
+        android:textSize="17sp" />
+
+</LinearLayout>

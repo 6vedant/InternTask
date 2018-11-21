@@ -7,12 +7,12 @@ import java.io.Serializable;
  */
 
 public class Tab1Prototype implements Serializable {
-    String team1_name, team2_name, host_name, series_name, inn1_score, inn2_score, match_result, team1_image_url, team2_image_url;
+    String team1_name, team2_name, host_name, series_name, inn1_score, inn2_score, match_result, team1_image_url, team2_image_url, host_image_url;
 
 
     public Tab1Prototype(String team1_name, String team2_name, String host_name,
                          String series_name, String inn1_score, String inn2_score,
-                         String match_result, String team1_image_url, String team2_image_url) {
+                         String match_result, String team1_image_url, String team2_image_url, String host_image_url) {
         this.team1_name = team1_name;
         this.team2_name = team2_name;
         this.host_name = host_name;
@@ -22,6 +22,15 @@ public class Tab1Prototype implements Serializable {
         this.match_result = match_result;
         this.team1_image_url = team1_image_url;
         this.team2_image_url = team2_image_url;
+        this.host_image_url = host_image_url;
+    }
+
+    public String getHost_image_url() {
+        return host_image_url;
+    }
+
+    public void setHost_image_url(String host_image_url) {
+        this.host_image_url = host_image_url;
     }
 
     public String getTeam1_name() {
