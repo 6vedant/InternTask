@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">InternTask</string>
+    <string name="title_activity_bottom_navigation">BottomNavigation</string>
+    <string name="title_match">Matches</string>
+    <string name="title_team">Team</string>
+    <string name="title_host">Host</string>
+    <string name="title_series">Series</string>
+
 </resources>
