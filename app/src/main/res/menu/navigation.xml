@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/baseline_half_star"
+        android:title="@string/title_match" />
+
+    <item
+        android:id="@+id/navigation__tab2"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_team" />
+
+    <item
+        android:id="@+id/navigation_tab3"
+        android:icon="@drawable/ic_host_white"
+        android:title="@string/title_host" />
+
+    <item
+        android:id="@+id/navigation_tab4"
+        android:icon="@drawable/ic_series_white"
+        android:title="@string/title_series" />
+
+
+</menu>
