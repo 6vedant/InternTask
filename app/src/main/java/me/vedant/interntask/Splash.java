@@ -89,6 +89,7 @@ public class Splash extends AppCompatActivity {
                     intent.putStringArrayListExtra("country_names", getCountry_names());
                     intent.putStringArrayListExtra("country_images_url", getCountry_images());
                     startActivity(intent);
+                    finish();
                 }
             }
 
