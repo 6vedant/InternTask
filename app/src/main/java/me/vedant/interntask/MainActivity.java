@@ -11,6 +11,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -53,17 +54,22 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
 
                     fragment = new Tab1();
+                    setTitle(R.string.title_match);
 
                     break;
                 case R.id.navigation__tab2:
+                    setTitle(R.string.title_team);
                     fragment = new Tab2();
+
                     break;
 
                 case R.id.navigation_tab3:
+                    setTitle(R.string.title_host);
                     fragment = new Tab3();
                     break;
 
                 case R.id.navigation_tab4:
+                    setTitle(R.string.title_series);
                     fragment = new Tab4();
                     break;
 
@@ -94,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // show the logo in the actionbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.indian_team_logo);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        // show the logo in the actionbar
+//        getSupportActionBar().setLogo(R.drawable.indian_team_logo);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        setTitle(R.string.app_name);
 
         //fetch the data from the splash intent
         JSON_URL = getIntent().getStringExtra("json_url");

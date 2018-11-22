@@ -5,5 +5,6 @@
     <string name="title_team">Team</string>
     <string name="title_host">Host</string>
     <string name="title_series">Series</string>
+    <string name="title_matches">All Matches</string>
 
 </resources>
