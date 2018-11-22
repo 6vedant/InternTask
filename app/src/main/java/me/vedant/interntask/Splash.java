@@ -96,7 +96,7 @@ public class Splash extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
 
                 progressBar.setVisibility(View.INVISIBLE);
-                Toast.makeText(getApplicationContext(), "Unable to fetch data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Unable to fetch data "+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

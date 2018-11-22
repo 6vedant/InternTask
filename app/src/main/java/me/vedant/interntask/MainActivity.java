@@ -1,7 +1,10 @@
 package me.vedant.interntask;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
@@ -41,10 +44,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
+            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            // Vibrate for 100 milliseconds
 
 
             switch (item.getItemId()) {
+
                 case R.id.navigation_home:
+
                     fragment = new Tab1();
 
                     break;
@@ -63,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     fragment = new Tab1();
             }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                v.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                //for in API 26
+                v.vibrate(100);
+            }
+
 
             return loadFragement(fragment);
         }
@@ -81,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         JSON_URL = getIntent().getStringExtra("json_url");
         ArrayList<String> country_names = getIntent().getStringArrayListExtra("country_names");
-        ArrayList<String> country_image_urls = getIntent().getStringArrayListExtra("country_image_url");
+        ArrayList<String> country_image_urls = getIntent().getStringArrayListExtra("country_images_url");
 
         final HashMap<String, String> country_image_map = new HashMap<>();
         for (int i = 0; i < country_image_urls.size(); i++) {
@@ -131,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
                                     Tab1Prototype tab1Prototype = new Tab1Prototype(crickPrototype.getTeam1(),
                                             crickPrototype.getTeam2(), crickPrototype.getHost(), crickPrototype.getSeries(),
                                             crickPrototype.getInn1(), crickPrototype.getInn2(), getMatchResult(crickPrototype.getInn1(), crickPrototype.getInn2(), crickPrototype.getTeam1(), crickPrototype.getTeam2()),
-                                            "url1", "url2", "");
+                                            country_image_map.get(crickPrototype.getTeam1()),
+                                            country_image_map.get(crickPrototype.getTeam2()), country_image_map.get(crickPrototype.getHost()));
                                     tab1Prototypes.add(tab1Prototype);
 
                                 } catch (Exception e) {

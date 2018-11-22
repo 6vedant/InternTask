@@ -67,6 +67,11 @@ public class Tab1Adapter extends RecyclerView.Adapter<Tab1Adapter.MyViewHolder> 
         holder.tv_team2_name.setText(tab1Prototypes.get(position).getTeam2_name());
         holder.tv_match_result.setText(tab1Prototypes.get(position).getMatch_result());
         holder.tv_series_tv.setText(tab1Prototypes.get(position).getSeries_name());
+        Picasso.with(context).load(Uri.parse(tab1Prototypes.get(position).getTeam1_image_url()))
+                .resize(100, 100).placeholder(R.drawable.indian_team_logo).into(holder.im_team1);
+        Picasso.with(context).load(Uri.parse(tab1Prototypes.get(position).getTeam2_image_url()))
+                .resize(100, 100).placeholder(R.drawable.indian_team_logo).into(holder.im_team2);
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +108,7 @@ public class Tab1Adapter extends RecyclerView.Adapter<Tab1Adapter.MyViewHolder> 
             tv_team2_name = (TextView) itemView.findViewById(R.id.tv_team2_name);
             tv_match_result = (TextView) itemView.findViewById(R.id.tv_match_result);
             im_team1 = (ImageView) itemView.findViewById(R.id.im_team1);
-            im_team1 = (ImageView) itemView.findViewById(R.id.im_team2);
+            im_team2 = (ImageView) itemView.findViewById(R.id.im_team2);
         }
 
     }
