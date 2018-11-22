@@ -46,8 +46,8 @@ public class Tab3 extends Fragment {
 
         View view = inflater.inflate(R.layout.tab1, container, false);
 
-        progressBar = (ProgressBar)view.findViewById(R.id.progressbar);
-        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressbar);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
 
         ArrayList<Tab1Prototype> tab1Prototypes = (ArrayList<Tab1Prototype>) getArguments().getSerializable("tab1prototypes");
 
@@ -59,18 +59,18 @@ public class Tab3 extends Fragment {
         country_image_url.clear();
 
         for (Tab1Prototype tab1Prototype : tab1Prototypes) {
-            if(!country_name_list.contains(tab1Prototype.getHost_name())){
+            if (!country_name_list.contains(tab1Prototype.getHost_name())) {
                 country_name_list.add(tab1Prototype.getHost_name());
                 country_image_url.add(tab1Prototype.getHost_image_url());
             }
 
         }
 
-        for(int i=0;i<country_name_list.size();i++){
+        for (int i = 0; i < country_name_list.size(); i++) {
             ArrayList<Tab1Prototype> temp_tab1prototypes = new ArrayList<>();
             temp_tab1prototypes.clear();
-            for(Tab1Prototype tab1Prototype : tab1Prototypes){
-                if(tab1Prototype.getHost_name().equals(country_name_list.get(i))){
+            for (Tab1Prototype tab1Prototype : tab1Prototypes) {
+                if (tab1Prototype.getHost_name().equals(country_name_list.get(i))) {
                     temp_tab1prototypes.add(tab1Prototype);
                 }
             }
@@ -78,14 +78,13 @@ public class Tab3 extends Fragment {
         }
 
         if (tab2Prototypes.size() > 0) {
+            // pass the adapter into recyclerview
             Tab2Adapter tab2Adapter = new Tab2Adapter(getContext(), tab2Prototypes);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(linearLayoutManager);
             recyclerView.setAdapter(tab2Adapter);
             progressBar.setVisibility(View.INVISIBLE);
         }
-
-
 
 
         return view;

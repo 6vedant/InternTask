@@ -83,6 +83,7 @@ public class Splash extends AppCompatActivity {
                 setCountry_names(list_country_names);
                 setCountry_images(list_country_images);
                 if (getJson_data_url() != null) {
+                    // hide the progressbar and pass the arraylist and json url as parameters to main activity
                     progressBar.setVisibility(View.INVISIBLE);
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("json_url", getJson_data_url());

@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean loadFragement(Fragment fragment) {
         // switching fragment
         if (fragment != null) {
+            // passing the arraylist of prototypes to the fragments
             Bundle bundle = new Bundle();
             bundle.putSerializable("valuesArray", crickPrototypes);
             bundle.putSerializable("tab1prototypes", tab1Prototypes);

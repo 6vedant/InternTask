@@ -47,8 +47,10 @@ public class Tab2 extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progressbar);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
 
+        // tab1 prototypes from the activity
         ArrayList<Tab1Prototype> tab1Prototypes = (ArrayList<Tab1Prototype>) getArguments().getSerializable("tab1prototypes");
 
+        //creating prototypes for adding data
         ArrayList<Tab2Prototype> tab2Prototypes = new ArrayList<>();
         tab2Prototypes.clear();
         ArrayList<String> country_name_list = new ArrayList<>();
@@ -79,17 +81,18 @@ public class Tab2 extends Fragment {
                     temp_tab1prototypes.add(tab1Prototype);
                 }
             }
+            //ading the prototype into tab2 prototypes list
             tab2Prototypes.add(new Tab2Prototype(country_name_list.get(i), temp_tab1prototypes, country_image_url.get(i)));
         }
 
         if (tab2Prototypes.size() > 0) {
+            // add the adapter into the recylerview
             Tab2Adapter tab2Adapter = new Tab2Adapter(getContext(), tab2Prototypes);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(linearLayoutManager);
             recyclerView.setAdapter(tab2Adapter);
             progressBar.setVisibility(View.INVISIBLE);
         }
-
 
 
         return view;

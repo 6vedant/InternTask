@@ -43,6 +43,8 @@ public class MatchPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+
+        // inflate the view
         View view = inflater.inflate(R.layout.match_pager_list_item, container, false);
         ImageView im_team1 = (ImageView) view.findViewById(R.id.im_pager_team1);
         ImageView im_team2 = (ImageView) view.findViewById(R.id.im_pager_team2);

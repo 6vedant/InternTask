@@ -46,17 +46,16 @@ public class Tab1 extends Fragment {
 
         View view = inflater.inflate(R.layout.tab1, container, false);
 
-        //   ArrayList<CrickPrototype> crickPrototypes = (ArrayList<CrickPrototype>) getArguments().getSerializable("valuesArray");
-
+        // tab1 prototypes getting from the activity into teh framgment
         ArrayList<Tab1Prototype> tab1Prototypes = (ArrayList<Tab1Prototype>)getArguments().getSerializable("tab1prototypes");
 
-        //   Toast.makeText(getContext(), "The size of the crickProtypes " + crickPrototypes.size(), Toast.LENGTH_SHORT).show();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         progressBar = (ProgressBar) view.findViewById(R.id.progressbar);
 
 
         if (tab1Prototypes.size() > 0) {
+            // setting the adapter to the reycyclerview
             Tab1Adapter tab1Adapter = new Tab1Adapter(getContext(), tab1Prototypes);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(linearLayoutManager);
