@@ -50,8 +50,8 @@ public class MatchPagerAdapter extends PagerAdapter {
         TextView tv_team2_name = (TextView) view.findViewById(R.id.tv_pager_team2_name);
         TextView tv_team1_score = (TextView) view.findViewById(R.id.tv_pager_team1score);
         TextView tv_team2_score = (TextView) view.findViewById(R.id.tv_pager_team2score);
-        TextView tv_series_name = (TextView)view.findViewById(R.id.tv_pager_series_name);
-        TextView tv_match_result = (TextView)view.findViewById(R.id.tv_pager_match_result);
+        TextView tv_series_name = (TextView) view.findViewById(R.id.tv_pager_series_name);
+        TextView tv_match_result = (TextView) view.findViewById(R.id.tv_pager_match_result);
 
         Tab1Prototype tab1Prototype = tab1Prototypes.get(position);
 

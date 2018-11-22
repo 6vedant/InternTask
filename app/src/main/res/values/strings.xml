@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">InternTask</string>
+    <string name="app_name">CricScore</string>
     <string name="title_activity_bottom_navigation">BottomNavigation</string>
     <string name="title_match">Matches</string>
     <string name="title_team">Team</string>
