@@ -136,6 +136,7 @@ public class Tab4Adapter extends RecyclerView.Adapter<Tab4Adapter.MyViewHolder> 
         circlePageIndicator.setViewPager(pager);
         circlePageIndicator.setCurrentItem(0);
 
+        //show the dialog
         dialog.show();
     }
 
