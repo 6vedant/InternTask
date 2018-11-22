@@ -46,6 +46,17 @@ public class Tab4 extends Fragment {
         progressBar = (ProgressBar)view.findViewById(R.id.progressbar);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerview);
 
+        ArrayList<String> series_name = new ArrayList<>();
+        series_name.clear();
+
+        for(Tab1Prototype tab1Prototype : tab1Prototypes){
+
+            if(!series_name.contains(tab1Prototype.getSeries_name())){
+                series_name.add(tab1Prototype.getSeries_name());
+            }
+        }
+
+
 
 
         return view;
