@@ -59,6 +59,7 @@
                         android:id="@+id/im_team1"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
+                        android:layout_marginLeft="5dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/indian_team_logo"
 
@@ -123,6 +124,7 @@
                         android:id="@+id/im_team2"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
+                        android:layout_marginRight="5dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/indian_team_logo"
 
