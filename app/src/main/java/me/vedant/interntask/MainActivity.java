@@ -2,6 +2,7 @@ package me.vedant.interntask;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.VibrationEffect;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_tab4:
-                    setTitle(R.string.title_host_toolbar);
+                    setTitle(R.string.title_series_toolbar);
                     fragment = new Tab4();
                     break;
 
@@ -100,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#001e3b")));
         //fetch the data from the splash intent
         JSON_URL = getIntent().getStringExtra("json_url");
         ArrayList<String> country_names = getIntent().getStringArrayListExtra("country_names");
@@ -112,12 +115,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         // loadFragement(new Tab1());
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.background));
-        }
         crickPrototypes.clear();
         tab1Prototypes.clear();
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
