@@ -53,7 +53,6 @@ public class Tab4 extends Fragment {
         ArrayList<String> series_name = new ArrayList<>();
         series_name.clear();
 
-        ArrayList<Tab1Prototype> tab1Prototypes1 = new ArrayList<>();
         ArrayList<Tab4Prototype> tab4Prototypes = new ArrayList<>();
         tab4Prototypes.clear();
 
@@ -65,6 +64,7 @@ public class Tab4 extends Fragment {
         }
 
         for (int i = 0; i < series_name.size(); i++) {
+            ArrayList<Tab1Prototype> tab1Prototypes1 = new ArrayList<>();
             tab1Prototypes1.clear();
             for (Tab1Prototype tab1Prototype : tab1Prototypes) {
                 if (tab1Prototype.getSeries_name().equals(series_name.get(i))) {

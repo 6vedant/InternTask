@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import me.vedant.interntask.R;
 import me.vedant.interntask.fragment.Tab4;
+import me.vedant.interntask.libs.AnimationUtils;
 import me.vedant.interntask.prototype.Tab1Prototype;
 import me.vedant.interntask.prototype.Tab2Prototype;
 import me.vedant.interntask.prototype.Tab4Prototype;
@@ -75,6 +76,16 @@ public class Tab4Adapter extends RecyclerView.Adapter<Tab4Adapter.MyViewHolder> 
                 showDialog(view, tab4Prototypes.get(position).getTab1Prototypes());
             }
         });
+
+        //add the fluidic effect
+        previousPosition = position;
+        if (position > previousPosition) {
+            AnimationUtils.animate(holder, true);
+        } else {
+            AnimationUtils.animate(holder, false);
+        }
+        previousPosition = position;
+
 
     }
 
