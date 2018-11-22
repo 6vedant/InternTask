@@ -22,15 +22,17 @@ import java.util.ArrayList;
 
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import me.vedant.interntask.R;
+import me.vedant.interntask.fragment.Tab4;
 import me.vedant.interntask.libs.AnimationUtils;
 import me.vedant.interntask.prototype.Tab1Prototype;
 import me.vedant.interntask.prototype.Tab2Prototype;
+import me.vedant.interntask.prototype.Tab4Prototype;
 
 /**
  * Created by vedant on 11/22/2018.
  */
 
-public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> {
+public class Tab4Adapter extends RecyclerView.Adapter<Tab4Adapter.MyViewHolder> {
 
     int previousPosition = 0;
     public Context context;
@@ -44,35 +46,34 @@ public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> 
         this.activity = activity;
     }
 
-    public ArrayList<Tab2Prototype> tab2Prototypes;
+    public ArrayList<Tab4Prototype> tab4Prototypes;
 
-    public Tab2Adapter(Context context, ArrayList<Tab2Prototype> tab2Prototypes) {
+    public Tab4Adapter(Context context, ArrayList<Tab4Prototype> tab4Prototypes) {
         this.context = context;
-        this.tab2Prototypes = tab2Prototypes;
+        this.tab4Prototypes = tab4Prototypes;
         Activity activity1 = (Activity) context;
         setActivity(activity1);
     }
 
     @NonNull
     @Override
-    public Tab2Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Tab4Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.tab2_recycler_item, parent, false);
-        return new Tab2Adapter.MyViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.tab4_recycler_series_item, parent, false);
+        return new Tab4Adapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final Tab4Adapter.MyViewHolder holder, final int position) {
 
-        holder.tv_country_name.setText(tab2Prototypes.get(position).getCountry_name());
-        Picasso.with(context).load(Uri.parse(tab2Prototypes.get(position).getCountry_url())).placeholder(R.drawable.indian_team_logo).into(holder.im_country);
+        holder.tv_num_matches.setText(tab4Prototypes.get(position).getTab1Prototypes().size() + " Matches");
+        holder.tv_series_name.setText(tab4Prototypes.get(position).getSeries_name());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "The size is : " + tab2Prototypes.get(position).getTab1Prototypes().size(), Toast.LENGTH_SHORT).show();
 
-                showDialog(view, tab2Prototypes.get(position).getTab1Prototypes());
+                showDialog(view, tab4Prototypes.get(position).getTab1Prototypes());
             }
         });
 
@@ -91,19 +92,19 @@ public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        return tab2Prototypes.size();
+        return tab4Prototypes.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_country_name;
-        ImageView im_country;
+        TextView tv_series_name;
+        TextView tv_num_matches;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            tv_country_name = (TextView) itemView.findViewById(R.id.tv_country_name);
-            im_country = (ImageView) itemView.findViewById(R.id.im_country_image);
+            tv_series_name = (TextView) itemView.findViewById(R.id.tv_tab4_series_name);
+            tv_num_matches = (TextView) itemView.findViewById(R.id.tv_tab4_mathces_number);
 
         }
     }
@@ -123,7 +124,6 @@ public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
         MatchPagerAdapter matchPagerAdapter = new MatchPagerAdapter(context, tab1Prototypes);
