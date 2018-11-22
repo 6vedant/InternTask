@@ -17,10 +17,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:padding="6dp"
+            android:padding="8dp"
             android:text="Home"
             android:textColor="#fff"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
     </LinearLayout>
 
@@ -42,6 +42,8 @@
                 android:id="@+id/im_pager_team1"
                 android:layout_width="95dp"
                 android:layout_height="95dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="4dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/indian_team_logo" />
 
@@ -52,7 +54,7 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="INDIA"
-                android:textColor="#cbdce2"
+                android:textColor="#ffffff"
                 android:textSize="18sp" />
 
             <TextView
@@ -61,23 +63,24 @@
                 android:layout_gravity="center"
                 android:padding="1dp"
                 android:text="1st Innings"
-                android:textColor="#fff" />
+                android:textColor="#dad0d0" />
 
             <TextView
                 android:id="@+id/tv_pager_team1score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:text="277/3"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/team2_layout"
             android:layout_toRightOf="@+id/team1_layout"
             android:gravity="center"
@@ -90,10 +93,10 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="12dp"
                 android:gravity="center|left"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:text="VS"
                 android:textColor="#fff"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:visibility="visible" />
 
 
@@ -112,6 +115,7 @@
                 android:id="@+id/im_pager_team2"
                 android:layout_width="95dp"
                 android:layout_height="95dp"
+                android:layout_marginTop="4dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/indian_team_logo"
 
@@ -124,7 +128,7 @@
                 android:layout_gravity="center"
                 android:padding="4dp"
                 android:text="PAKISTAN"
-                android:textColor="#cbdce2"
+                android:textColor="#fff"
                 android:textSize="18sp" />
 
             <TextView
@@ -133,22 +137,24 @@
                 android:layout_gravity="center"
                 android:padding="1dp"
                 android:text="2nd Innings"
-                android:textColor="#fff" />
+                android:textColor="#dad0d0" />
 
             <TextView
                 android:id="@+id/tv_pager_team2score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:text="277/3"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:textSize="17sp" />
         </LinearLayout>
 
 
     </RelativeLayout>
 
     <TextView
+        android:layout_marginBottom="4dp"
         android:id="@+id/tv_pager_match_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -159,6 +165,6 @@
         android:padding="8dp"
         android:text="India won by 4 wickets."
         android:textColor="#03f97e"
-        android:textSize="17sp" />
+        android:textSize="18sp" />
 
 </LinearLayout>
