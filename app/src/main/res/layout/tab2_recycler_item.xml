@@ -55,7 +55,7 @@
                         android:padding="8dp"
                         android:text="India"
                         android:textColor="#ffffff"
-                        android:textSize="18sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tv_matches_number_tab2"
@@ -66,7 +66,7 @@
                         android:gravity="center_horizontal"
                         android:padding="2dp"
                         android:text="2 Matches"
-                        android:textColor="#ffffff"
+                        android:textColor="#dad0d0"
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>

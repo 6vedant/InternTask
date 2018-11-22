@@ -61,9 +61,7 @@
                         android:layout_height="75dp"
                         android:layout_marginLeft="5dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/indian_team_logo"
-
-                        />
+                        android:src="@drawable/indian_team_logo" />
 
                     <TextView
                         android:id="@+id/tv_team1_name"
@@ -72,7 +70,8 @@
                         android:layout_gravity="center"
                         android:padding="4dp"
                         android:text="INDIA"
-                        android:textColor="#cbdce2" />
+                        android:textColor="#fff"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -93,7 +92,7 @@
                         android:padding="4dp"
                         android:text="India's Tour of Pakistan"
                         android:textColor="#fff"
-                        android:textSize="18sp"
+                        android:textSize="19sp"
                         android:visibility="gone" />
 
                     <TextView
@@ -107,7 +106,7 @@
                         android:padding="8dp"
                         android:text="India won by 4 wickets."
                         android:textColor="#03f77d"
-                        android:textSize="16sp" />
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -137,7 +136,8 @@
                         android:layout_gravity="center"
                         android:padding="4dp"
                         android:text="PAKISTAN"
-                        android:textColor="#cbdce2" />
+                        android:textColor="#fff"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
 
