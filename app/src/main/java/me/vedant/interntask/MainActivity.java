@@ -22,7 +22,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import me.vedant.interntask.fragment.Tab1;
 import me.vedant.interntask.fragment.Tab2;
@@ -66,18 +68,25 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private static final String JSON_URL = "https://pastebin.com/raw/HVJXf628";
+    private static String JSON_URL = "https://pastebin.com/raw/HVJXf628";
     public static ArrayList<CrickPrototype> crickPrototypes = new ArrayList<>();
     private static ArrayList<Tab1Prototype> tab1Prototypes = new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("ResourceAsColor")
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        JSON_URL = getIntent().getStringExtra("json_url");
+        ArrayList<String> country_names = getIntent().getStringArrayListExtra("country_names");
+        ArrayList<String> country_image_urls = getIntent().getStringArrayListExtra("country_image_url");
+
+        final HashMap<String, String> country_image_map = new HashMap<>();
+        for (int i = 0; i < country_image_urls.size(); i++) {
+            country_image_map.put(country_names.get(i), country_image_urls.get(i));
+        }
 
         // loadFragement(new Tab1());
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -138,7 +147,8 @@ public class MainActivity extends AppCompatActivity {
                                     Tab1Prototype tab1Prototype = new Tab1Prototype(crickPrototype.getTeam1(),
                                             crickPrototype.getTeam2(), crickPrototype.getHost(), crickPrototype.getSeries(),
                                             crickPrototype.getInn1(), crickPrototype.getInn2(), getMatchResult(crickPrototype.getInn1(), crickPrototype.getInn2(), crickPrototype.getTeam1(), crickPrototype.getTeam2()),
-                                            "url1", "url2", "");
+                                            country_image_map.get(crickPrototype.getTeam1()),
+                                            country_image_map.get(crickPrototype.getTeam2()), country_image_map.get(crickPrototype.getHost()));
                                     tab1Prototypes.add(tab1Prototype);
 
                                     e.printStackTrace();
