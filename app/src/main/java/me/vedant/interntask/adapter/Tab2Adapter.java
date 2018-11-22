@@ -66,12 +66,11 @@ public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> 
 
         holder.tv_country_name.setText(tab2Prototypes.get(position).getCountry_name());
         Picasso.with(context).load(Uri.parse(tab2Prototypes.get(position).getCountry_url())).placeholder(R.drawable.indian_team_logo).into(holder.im_country);
+        holder.tv_matches_num.setText(tab2Prototypes.get(position).getTab1Prototypes().size() + " Matches");
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "The size is : " + tab2Prototypes.get(position).getTab1Prototypes().size(), Toast.LENGTH_SHORT).show();
-
                 showDialog(view, tab2Prototypes.get(position).getTab1Prototypes());
             }
         });
@@ -98,13 +97,14 @@ public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> 
 
         TextView tv_country_name;
         ImageView im_country;
+        TextView tv_matches_num;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             tv_country_name = (TextView) itemView.findViewById(R.id.tv_country_name);
             im_country = (ImageView) itemView.findViewById(R.id.im_country_image);
-
+            tv_matches_num = (TextView) itemView.findViewById(R.id.tv_matches_number_tab2);
         }
     }
 
@@ -123,7 +123,6 @@ public class Tab2Adapter extends RecyclerView.Adapter<Tab2Adapter.MyViewHolder> 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
         MatchPagerAdapter matchPagerAdapter = new MatchPagerAdapter(context, tab1Prototypes);

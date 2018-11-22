@@ -2,6 +2,7 @@ package me.vedant.interntask;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -9,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -46,30 +48,28 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            // Vibrate for 100 milliseconds
+            // Vibrate for 20 milliseconds
 
 
             switch (item.getItemId()) {
 
                 case R.id.navigation_home:
-
+                    setTitle(R.string.title_match_toolbar);
                     fragment = new Tab1();
-                    setTitle(R.string.title_match);
-
                     break;
-                case R.id.navigation__tab2:
-                    setTitle(R.string.title_team);
-                    fragment = new Tab2();
 
+                case R.id.navigation__tab2:
+                    setTitle(R.string.title_team_toobar);
+                    fragment = new Tab2();
                     break;
 
                 case R.id.navigation_tab3:
-                    setTitle(R.string.title_host);
+                    setTitle(R.string.title_host_toolbar);
                     fragment = new Tab3();
                     break;
 
                 case R.id.navigation_tab4:
-                    setTitle(R.string.title_series);
+                    setTitle(R.string.title_host_toolbar);
                     fragment = new Tab4();
                     break;
 
@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new Tab1();
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                v.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
+                v.vibrate(VibrationEffect.createOneShot(20, VibrationEffect.DEFAULT_AMPLITUDE));
             } else {
                 //for in API 26
-                v.vibrate(100);
+                v.vibrate(20);
             }
 
 
@@ -100,10 +100,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        // show the logo in the actionbar
-//        getSupportActionBar().setLogo(R.drawable.indian_team_logo);
-//        getSupportActionBar().setDisplayUseLogoEnabled(true);
-//        setTitle(R.string.app_name);
 
         //fetch the data from the splash intent
         JSON_URL = getIntent().getStringExtra("json_url");
@@ -114,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < country_image_urls.size(); i++) {
             country_image_map.put(country_names.get(i), country_image_urls.get(i));
         }
+
 
 
         // loadFragement(new Tab1());

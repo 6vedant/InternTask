@@ -5,6 +5,11 @@
     <string name="title_team">Team</string>
     <string name="title_host">Host</string>
     <string name="title_series">Series</string>
-    <string name="title_matches">All Matches</string>
+
+    <string name="title_match_toolbar">CricScore - Matches</string>
+    <string name="title_team_toobar">CricScore - Team</string>
+    <string name="title_host_toolbar">CrickScore - Host</string>
+    <string name="title_series_toolbar">CrickScore - Series</string>
+
 
 </resources>
