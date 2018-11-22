@@ -93,6 +93,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // show the logo in the actionbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.indian_team_logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        //fetch the data from the splash intent
         JSON_URL = getIntent().getStringExtra("json_url");
         ArrayList<String> country_names = getIntent().getStringArrayListExtra("country_names");
         ArrayList<String> country_image_urls = getIntent().getStringArrayListExtra("country_images_url");
@@ -101,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < country_image_urls.size(); i++) {
             country_image_map.put(country_names.get(i), country_image_urls.get(i));
         }
+
 
         // loadFragement(new Tab1());
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
