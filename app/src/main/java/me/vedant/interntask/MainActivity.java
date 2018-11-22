@@ -43,6 +43,7 @@ import me.vedant.interntask.prototype.Tab1Prototype;
 
 public class MainActivity extends AppCompatActivity {
 
+    // setting onitemselected listener in bottom navigation bar
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -57,22 +58,22 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.navigation_home:
                     setTitle(R.string.title_match_toolbar);
-                    fragment = new Tab1();
+                    fragment = new Tab1();      //All match fragment
                     break;
 
                 case R.id.navigation__tab2:
                     setTitle(R.string.title_team_toobar);
-                    fragment = new Tab2();
+                    fragment = new Tab2();      //Team wise fragment
                     break;
 
                 case R.id.navigation_tab3:
                     setTitle(R.string.title_host_toolbar);
-                    fragment = new Tab3();
+                    fragment = new Tab3();      // Host wise fragment
                     break;
 
                 case R.id.navigation_tab4:
                     setTitle(R.string.title_series_toolbar);
-                    fragment = new Tab4();
+                    fragment = new Tab4();      //Series wise fragment
                     break;
 
                 default:
@@ -103,13 +104,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
+        assert actionBar != null;       // it will crash in lower than lollipop
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#001e3b")));
         //fetch the data from the splash intent
         JSON_URL = getIntent().getStringExtra("json_url");
+
         ArrayList<String> country_names = getIntent().getStringArrayListExtra("country_names");
         ArrayList<String> country_image_urls = getIntent().getStringArrayListExtra("country_images_url");
 
+        //adding the country image urls corresponding to the country name into the hashmap
         final HashMap<String, String> country_image_map = new HashMap<>();
         for (int i = 0; i < country_image_urls.size(); i++) {
             country_image_map.put(country_names.get(i), country_image_urls.get(i));
@@ -117,9 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         // loadFragement(new Tab1());
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);   //it will hide the status bar
         crickPrototypes.clear();
         tab1Prototypes.clear();
+
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setBackgroundColor(R.color.navigationBack);
         //   navigation.setBackgroundResource(R.drawable.bottom_back);
@@ -144,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                                 //getting the json object of the particular index inside the array
                                 JSONObject heroObject = (JSONObject) obj.get(obj.names().getString(i));
 
+                                // populating the crickprotypes arraylist
                                 try {
                                     CrickPrototype crickPrototype = new CrickPrototype(heroObject.getString("team1"),
                                             heroObject.getString("team2"),
@@ -161,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                                     tab1Prototypes.add(tab1Prototype);
 
                                 } catch (Exception e) {
-                                    // inn2 is missing case
+                                    // inn2 is missing case, it is match cancelled case
                                     CrickPrototype crickPrototype = new CrickPrototype(heroObject.getString("team1"),
                                             heroObject.getString("team2"),
                                             heroObject.getString("series"),
@@ -181,11 +186,8 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-
+                            // loading the tab1 fragmnet
                             loadFragement(new Tab1());
-                            for (CrickPrototype crickPrototype : crickPrototypes) {
-                                // Toast.makeText(getApplicationContext(), "" + crickPrototype.getSeries() + " Team : " + crickPrototype.getTeam1() + " Team2 : " + crickPrototype.getInn2(), Toast.LENGTH_SHORT).show();
-                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -195,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         //displaying the error in toast if occurrs
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), error.getMessage() + " error at line 200", Toast.LENGTH_SHORT).show();
                     }
                 });
 
